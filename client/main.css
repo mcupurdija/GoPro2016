@@ -1,0 +1,20 @@
+body {
+    background: url("https://subtlepatterns.com/patterns/new_year_background.png") repeat;
+}
+
+.row {
+    margin-bottom: 25px;
+}
+
+#submit-btn {
+    margin-top: 20px;
+}
+
+#result-grp {
+    margin-bottom: 50px;
+}
+
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}

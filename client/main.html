@@ -1,0 +1,120 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GoPro Proslava 2016</title>
+</head>
+<body>
+{{> header}}
+{{> voting}}
+{{> results}}
+{{> sAlert}}
+</body>
+
+<template name="header">
+    <div align="center">
+        <h1>GoPro Proslava 2016</h1>
+    </div>
+</template>
+
+<template name="voting">
+    <div id="voting-container" class="container">
+        <form>
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3" align="center">
+                    <h3>Ko je najjači frajer u firmi?</h3>
+                    <select id="q1" class="selectpicker">
+                        {{#each employees}}
+                            <option value="{{employeeId}}">{{employeeName}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3" align="center">
+                    <h3>Ko je najbolja riba u firmi?</h3>
+                    <select id="q2" class="selectpicker">
+                        {{#each employees}}
+                            <option value="{{employeeId}}">{{employeeName}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3" align="center">
+                    <h3>Sa kim ste najbolje sarađivali prošle godine?</h3>
+                    <select id="q3" class="selectpicker">
+                        {{#each employees}}
+                            <option value="{{employeeId}}">{{employeeName}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3" align="center">
+                    <button id="submit-btn" type="submit" class="btn btn-success">Pošalji</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</template>
+
+<template name="results">
+    <div id="results-container" class="container">
+        <div id="result-grp" class="col-lg-5" align="center">
+            <h4>Ko je najjači frajer u firmi?</h4>
+            <table class="table table">
+                <thead>
+                <tr>
+                    <th>Ime</th>
+                    <th>Poeni</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each data1}}
+                    <tr>
+                        <td>{{employeeName}}</td>
+                        <td>{{points}}</td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div id="result-grp" class="col-lg-5 col-lg-offset-2" align="center">
+            <h4>Ko je najbolja riba u firmi?</h4>
+            <table class="table table">
+                <thead>
+                <tr>
+                    <th>Ime</th>
+                    <th>Poeni</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each data2}}
+                    <tr>
+                        <td>{{employeeName}}</td>
+                        <td>{{points}}</td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div id="result-grp" class="col-lg-5" align="center">
+            <h4>Sa kim ste najbolje sarađivali prošle godine?</h4>
+            <table class="table table">
+                <thead>
+                <tr>
+                    <th>Ime</th>
+                    <th>Poeni</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each data3}}
+                    <tr>
+                        <td>{{employeeName}}</td>
+                        <td>{{points}}</td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>
